@@ -1,34 +1,31 @@
-var express = require('express');   
+var express = require('express');
+var morgan = require('morgan');
 var app = express();
-var variable='null';                            //aqui se almacena el texto recibido del post
 
+var variable;
 
-app.use(express.json())                         // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(morgan('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
+/**
+ * [GET] localhost:8080/
+ */
 
 app.get('/', function (req, res) {
-  
-  res.json({texto: variable});                 // otra forma de responder: res.send('texto:'+ variable);
-  console.log('haciendo un [GET]');
+  res.json({ mensaje: variable });
+  //res.send('texto:'+ variable);
 });
 
-                                                /* otra forma de hacer un post sin json
-                                                app.post('/:user', function (req, res) {
-
-                                                  variable= req.params.user;
-                                                  res.send('guardado... c:');
-                                                  console.log('haciendo un [POST]');
-                                                });*/
-
-
-app.post('/', function(req, res){
-  variable= req.body.texto                      //setea el valor que recibe a "variable"
-  res.send('guardado... C:');
-  console.log('haciendo un [POST]->'+ variable);
-  
+/**
+ * [POST] localhost:8080/
+ * Descripcion: entra un json y guarda el valor en una variable
+*/
+app.post('/', function (req, res) {
+  variable = req.body.texto
+  res.json({ mensaje: "exito" })
 });
 
 app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+  console.log('app listening on port 8080!');
 });
