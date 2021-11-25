@@ -1,2 +1,3 @@
 # API-REST
-- [js](./js)
+- [JavaScript](./js)
+- [TypeScript](./ts)

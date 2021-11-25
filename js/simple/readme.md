@@ -13,8 +13,8 @@
 - [NPM](https://www.npmjs.com/): Node package Manager 
 
 ## **Librerias usadas**
-- [Express](https://www.npmjs.com/package/morgan): servidor HTTP.
-- [Morgan](https://www.npmjs.com/package/express): Por medio de "dev" muestra de una forma visual, el estado de las respuestas que se estan realizando al servidor.
+- [Express](https://www.npmjs.com/package/express): servidor HTTP.
+- [Morgan](https://www.npmjs.com/package/morgan): Por medio de "dev" muestra de una forma visual, el estado de las respuestas que se estan realizando al servidor.
 
 
 ## **Comandos** 
